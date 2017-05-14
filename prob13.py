@@ -1,6 +1,6 @@
 ###########  Boyan Naydenov  #############
 #  https://projecteuler.net/problem=13
-#  answer: 
+#  answer: 5537376230
 
 string = """37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
@@ -103,33 +103,36 @@ string = """37107287533902102798797998220837590246510135740250
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690""".split("\n");
 
+# for i in range(0,100):
+# 	# string[i] = map(int,list(string[i]));
+# 	string[i] = (int)string[i];
+
+# column_sum = [0,0,0,0,0,0,0,0,0,0];
+# result = [0,0,0,0,0,0,0,0,0,0];
+result = 0
 for i in range(0,100):
-	string[i] = map(int,list(string[i]));
+	result += int(string[i])
+# 	column_sum[0] += string[i][49]
+# 	column_sum[1] += string[i][48]
+# 	column_sum[2] += string[i][47]
+# 	column_sum[3] += string[i][46]
+# 	column_sum[4] += string[i][45]
+# 	column_sum[5] += string[i][44]
+# 	column_sum[6] += string[i][43]
+# 	column_sum[7] += string[i][42]
+# 	column_sum[8] += string[i][41]
+# 	column_sum[9] += string[i][40]
+# print(column_sum)
 
-column_sum = [0,0,0,0,0,0,0,0,0,0];
-result = [0,0,0,0,0,0,0,0,0,0];
-for i in range(0,100):
-	column_sum[0] += string[i][49]
-	column_sum[1] += string[i][48]
-	column_sum[2] += string[i][47]
-	column_sum[3] += string[i][46]
-	column_sum[4] += string[i][45]
-	column_sum[5] += string[i][44]
-	column_sum[6] += string[i][43]
-	column_sum[7] += string[i][42]
-	column_sum[8] += string[i][41]
-	column_sum[9] += string[i][40]
-print(column_sum)
+# for i in range(0,10):
+# 	divisor = 10;
+# 	print(column_sum[i])
+# 	for j in range(1,len(str(column_sum[i]))+1):
+# 		if i+j <= 9:
+# 			print((column_sum[i]/divisor)%10);
+# 			result[i+j] += (column_sum[i]/divisor)%10;
+# 			divisor *= 10;
+# 	result[i] = column_sum[i]%10;
 
-for i in range(0,10):
-	divisor = 10;
-	print(column_sum[i])
-	for j in range(1,len(str(column_sum[i]))+1):
-		if i+j <= 9:
-			print((column_sum[i]/divisor)%10);
-			result[i+j] += (column_sum[i]/divisor)%10;
-			divisor *= 10;
-	result[i] = column_sum[i]%10;
-
-print(result);
+print(str(result)[:10]);
 
